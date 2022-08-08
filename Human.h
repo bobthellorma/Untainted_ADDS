@@ -3,12 +3,10 @@
 
 class Human{
 
-    private:
-    char Move;
 
     public:
+    Human();
     char makeMove();
-    char getMove();
 
 };
 

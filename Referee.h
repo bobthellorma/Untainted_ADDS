@@ -5,7 +5,8 @@
 class Referee{
 
     public:
-    char refGame(char compMove, char humanMove);
+    Referee();
+    char refGame(Human Player1, Computer Player2);
     
 };
 

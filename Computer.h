@@ -4,11 +4,10 @@
 class Computer{
 
     private:
-    char Move;
 
     public:
+    Computer();
     char makeMove();
-    char getMove();
 
 };
 

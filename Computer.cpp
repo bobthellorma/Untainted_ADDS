@@ -1,12 +1,11 @@
 #include "Computer.h"
 
-char Computer::getMove()
+Computer::Computer()
 {
-    return Move;
+    // do nothing
 }
 
 char Computer::makeMove()
 {
-    Computer::Move = 'R';
     return 'R';
 }

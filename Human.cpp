@@ -1,6 +1,11 @@
 #include "Human.h"
 #include <iostream>
 
+Human::Human()
+{
+    // do nothing
+}
+
 char Human::makeMove()
 {
     char tempMove;
@@ -9,9 +14,4 @@ char Human::makeMove()
     std::cin >> tempMove;
     
     return tempMove;
-}
-
-char Human::getMove()
-{
-    return Human::Move;
 }

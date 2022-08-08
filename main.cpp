@@ -10,11 +10,5 @@ int main()
     Computer Player2;
     Referee ref;
 
-    Player1.makeMove();
-    char p1move = Player1.getMove();
-
-    Player2.makeMove();
-    char p2move = Player2.getMove();
-
-    std::cout << ref.refGame(p2move,p1move);
+    std::cout << ref.refGame(Player1,Player2);
 }
