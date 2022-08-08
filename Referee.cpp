@@ -12,10 +12,10 @@ char Referee::refGame(Human Player1, Computer Player2)
 
     if (compMove == humanMove)
     {
-        return 'D';
+        return 'T';
     }
 
-    else if (humanMove == 'P')
+    else if (humanMove == 'S')
     {
         return 'L';
     }
