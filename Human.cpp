@@ -9,6 +9,8 @@ Human::Human()
 char Human::makeMove()
 {
     char tempMove;
+
+    // adding a comment
     
     std::cout << "Enter move: ";
     std::cin >> tempMove;
