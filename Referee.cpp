@@ -1,6 +1,4 @@
 #include "Referee.h"
-#include "Human.h"
-#include "Computer.h"
 
 Referee::Referee()
 {
@@ -9,8 +7,8 @@ Referee::Referee()
 
 char Referee::refGame(Human Player1, Computer Player2)
 {
-    char humanMove = Player1.getMove();
-    char compMove = Player2.getMove();
+    char humanMove = Player1.makeMove();
+    char compMove = Player2.makeMove();
 
     if (compMove == humanMove)
     {
