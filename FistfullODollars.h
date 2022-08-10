@@ -1,5 +1,6 @@
 #ifndef _FISTFULLODOLLARS_H
 #define _FISTFULLOLDOLLARS_H
+#include "Computer.h"
 
 class FistfullODollars : public Computer{
 

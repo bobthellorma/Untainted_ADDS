@@ -1,6 +1,6 @@
 #include "Avalanche.h"
 
-char Toolbox::makeMove()
+char Avalanche::makeMove()
 {
     return 'R';
 }

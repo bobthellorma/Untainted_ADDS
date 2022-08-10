@@ -1,7 +1,8 @@
 #ifndef _AVALANCHE_H
 #define _AVALANCHE_H
+#include "Computer.h"
 
-class Toolbox : public Computer{
+class Avalanche : public Computer{
 
     // Redefine makeMove
     char makeMove();

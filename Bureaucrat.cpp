@@ -1,6 +1,6 @@
 #include "Bureaucrat.h"
 
-char Toolbox::makeMove()
+char Bureaucrat::makeMove()
 {
     return 'P';
 }
