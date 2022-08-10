@@ -8,3 +8,8 @@ char PaperDoll::makeMove()
     else{counter = 0;}
     return movesToMake[counter-1];
 }
+
+void PaperDoll::Reset()
+{
+    counter = 0;
+}

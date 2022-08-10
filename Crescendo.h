@@ -12,6 +12,9 @@ class Crescendo : public Computer{
     // Redefine makeMove
     char makeMove();
 
+    // Reset
+    void Reset();
+
     // Create movesToMake
     char movesToMake[3] = {'P','S','R'};
 

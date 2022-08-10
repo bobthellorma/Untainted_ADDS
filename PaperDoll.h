@@ -12,6 +12,8 @@ class PaperDoll : public Computer{
     // Redefine makeMove
     char makeMove();
 
+    void Reset();
+
     // Create movesToMake
     char movesToMake[3] = {'P','S','S'};
 

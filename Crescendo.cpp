@@ -8,3 +8,8 @@ char Crescendo::makeMove()
     else{counter = 0;}
     return movesToMake[counter-1];
 }
+
+void Crescendo::Reset()
+{
+    counter = 0;
+}
