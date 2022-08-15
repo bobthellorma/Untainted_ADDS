@@ -26,15 +26,15 @@ char Referee::refGame(Player* Player1, Player* Player2)
     {
         if (Move2 == 'R')
         {
-            return 'L';
+            return 'W';
         }
-        return 'W';
+        return 'L';
     }
 
     // first player goes scissors
     if (Move2 == 'P')
     {
-        return 'L';
+        return 'W';
     }
-    return 'W';
+    return 'L';
 }

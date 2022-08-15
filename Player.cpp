@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Human.h"
 #include <iostream>
+#include <string>
 
 Player::Player()
 {
@@ -19,9 +20,14 @@ char Player::makeMove()
     return tempMove;
 }
 
+void Player::type_message(std::string mes)
+{
+    message = mes;
+}
+
 void Player::printOut()
 {
-    std::cout << "I am here";
+    std::cout << message << std::endl;
 }
 
 void Player::Reset()
