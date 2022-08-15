@@ -4,6 +4,9 @@
 class Player
 {
     public:
-    char virtual makeMove() = 0;
+    Player();
+    virtual char makeMove();
+    virtual void Reset();
+    void printOut();
 };
 #endif

@@ -10,6 +10,7 @@
 #include "Toolbox.h"
 #include "Tournament.h"
 #include "Human.cpp"
+#include "Player.cpp"
 #include <array>
 #include <iostream>
 
@@ -19,7 +20,7 @@ int main()
     Tournament tourn = Tournament();
 
     // Create array of objects 
-    Human* Player1 = new Human();
+    PaperDoll* Player1 = new PaperDoll();
     PaperDoll* Player2 = new PaperDoll();
     FistfullODollars* Player3 = new FistfullODollars();
     Crescendo* Player4 = new Crescendo();
@@ -31,6 +32,6 @@ int main()
     std::array <Player*, 8> competitors = {Player1, Player2, Player3, Player4, Player5, Player6, Player7, Player8};
 
     // Call run function on tournament object
-    tourn.run(competitors);
+    std::cout << tourn.run(competitors);
 }
 

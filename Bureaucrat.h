@@ -6,6 +6,7 @@ class Bureaucrat : public Computer{
 
     // Redefine makeMove
     char makeMove();
+    void Reset();
 
 };
 

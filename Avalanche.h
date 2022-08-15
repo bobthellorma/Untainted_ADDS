@@ -6,6 +6,7 @@ class Avalanche : public Computer{
 
     // Redefine makeMove
     char makeMove();
+    void Reset();
 
 };
 

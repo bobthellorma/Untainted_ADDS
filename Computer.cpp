@@ -10,3 +10,8 @@ char Computer::makeMove()
 {
     return 'R';
 }
+
+void Computer::Reset()
+{
+    // do nothing
+}

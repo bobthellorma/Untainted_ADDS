@@ -6,6 +6,7 @@ class RandomComputer : public Computer{
 
     // Redefine makeMove
     char makeMove();
+    void Reset();
 
 };
 

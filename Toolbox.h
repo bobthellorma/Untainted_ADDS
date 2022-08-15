@@ -6,6 +6,7 @@ class Toolbox : public Computer{
 
     // Redefine makeMove
     char makeMove();
+    void Reset();
 
 };
 

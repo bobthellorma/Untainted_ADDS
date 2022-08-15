@@ -23,3 +23,8 @@ char Human::makeMove()
     
     return tempMove;
 }
+
+void Human::Reset()
+{
+    // do nothing
+}

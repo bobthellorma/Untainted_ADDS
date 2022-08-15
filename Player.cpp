@@ -2,12 +2,12 @@
 #include "Human.h"
 #include <iostream>
 
-Human::Human()
+Player::Player()
 {
     // do nothing
 }
 
-char Human::makeMove()
+char Player::makeMove()
 {
     char tempMove;
 
@@ -17,4 +17,14 @@ char Human::makeMove()
     std::cin >> tempMove;
     
     return tempMove;
+}
+
+void Player::printOut()
+{
+    std::cout << "I am here";
+}
+
+void Player::Reset()
+{
+    // do nothing
 }

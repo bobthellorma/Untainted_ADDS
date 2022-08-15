@@ -7,3 +7,8 @@ char RandomComputer::makeMove()
     int location = rand() % 3;
     return values[location];
 }
+
+void RandomComputer::Reset()
+{
+    // do nothing
+}
