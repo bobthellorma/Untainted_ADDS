@@ -5,7 +5,7 @@
 class Referee
 {
     public:
-    char refGame(*Player Player1, *Player Player2);
+    char refGame(Player* Player1, Player* Player2);
 };
 
 #endif

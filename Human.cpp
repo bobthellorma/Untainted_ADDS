@@ -14,6 +14,12 @@ char Human::makeMove()
     
     std::cout << "Enter move: ";
     std::cin >> tempMove;
+
+    while (tempMove != 'R' && tempMove != 'P' && tempMove != 'S')
+    {
+        std::cout << "Enter move: ";
+    std::cin >> tempMove;
+    } 
     
     return tempMove;
 }

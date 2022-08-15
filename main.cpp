@@ -8,11 +8,29 @@
 #include "RandomComputer.h"
 #include "Referee.h"
 #include "Toolbox.h"
+#include "Tournament.h"
+#include "Human.cpp"
+#include <array>
 #include <iostream>
 
 int main()
 {
-    PaperDoll player1 = PaperDoll();
-    std::cout << player1.makeMove() << player1.makeMove() << player1.makeMove();
+    // Create Tournament object
+    Tournament tourn = Tournament();
+
+    // Create array of objects 
+    Human* Player1 = new Human();
+    PaperDoll* Player2 = new PaperDoll();
+    FistfullODollars* Player3 = new FistfullODollars();
+    Crescendo* Player4 = new Crescendo();
+    Crescendo* Player5 = new Crescendo();
+    Computer* Player6 = new Computer();
+    Toolbox* Player7 = new Toolbox();
+    PaperDoll* Player8 = new PaperDoll();
+
+    std::array <Player*, 8> competitors = {Player1, Player2, Player3, Player4, Player5, Player6, Player7, Player8};
+
+    // Call run function on tournament object
+    tourn.run(competitors);
 }
 
