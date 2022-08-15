@@ -1,9 +1,8 @@
 #ifndef _COMPUTER_H
 #define _COMPUTER_H
+#include "Player.h"
 
-class Computer{
-
-    private:
+class Computer : public Player{
 
     public:
     Computer();

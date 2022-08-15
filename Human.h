@@ -1,8 +1,7 @@
 #ifndef _HUMAN_H
 #define _HUMAN_H
 
-class Human{
-
+class Human : public Player{
 
     public:
     Human();
