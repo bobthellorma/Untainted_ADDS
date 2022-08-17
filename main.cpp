@@ -1,12 +1,13 @@
 #include <iostream>
-#include "Father.h"
-#include "Son.h"
+#include "Book.h"
+#include "Document.h"
+#include "Library.h"
 
 int main()
 {
-    Father dad;
-    Son kid;
+    // create Book and Library objects
+    Library lib;
+    Book* book = new Book(); // create pointer to Book called book
 
-    dad.set_val(15);
-    std::cout << kid.get_val(dad) << std::endl;
+    // 
 }
