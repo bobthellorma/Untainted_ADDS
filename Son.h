@@ -1,10 +1,11 @@
 #ifndef _SON_H
 #define _SON_H
+#include "Father.h"
 
 class Son
 {
     public:
-    void set_val(int newval);
+    int get_val(Father t);
 };
 
 #endif

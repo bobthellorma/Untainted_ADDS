@@ -8,7 +8,7 @@ class Father
     friend class Son;
 
     public:
-    int get_val();
+    void set_val(int newval);
 
 };
 

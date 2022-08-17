@@ -1,7 +1,7 @@
 #include "Father.h"
 
-int Father::get_val()
+void Father::set_val(int newval)
 {
-    return randVal = 10;
+    randVal = newval;
 }
 
