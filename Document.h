@@ -3,7 +3,7 @@
 
 class Document
 {
-    private:
+    protected:
     int docID; /* create a book ID so that this interface will work
     with multiple documents*/
 

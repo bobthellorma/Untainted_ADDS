@@ -1,1 +1,2 @@
-// can leave this document empty as there is nothing I need to implement here
+#include "Document.h"
+
