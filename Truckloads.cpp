@@ -15,6 +15,10 @@ int Truckloads::subTrucks(int numCrates, int loadSize)
     // Base Case
     if (numCrates <= loadSize)
     {
+        if (numCrates <= 0)
+        {
+            return 0;
+        }
         return 1;
     }
 

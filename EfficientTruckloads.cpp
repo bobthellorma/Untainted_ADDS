@@ -1,34 +1,40 @@
 #include "EfficientTruckloads.h"
+#include <vector>
+#include <map>
 
 int EfficientTruckloads::numTrucks(int numCrates, int loadSize)
 {
     // Check if number is valid
     if (numCrates < 1 || loadSize < 1 || numCrates > 10000 || loadSize > numCrates-1)
     {
-        return -1; // indicates invalid input
+        //return -1; // indicates invalid input
     }
     return subTrucks(numCrates, loadSize); // pass on to sub-function to call recursively
 }
 
-
 int EfficientTruckloads::subTrucks(int numCrates, int loadSize)
 {
-    // Base Case
     if (numCrates <= loadSize)
     {
         return 1;
-    }
+    } // consider also the return 0 case
 
-    // Data for next
     int firstHalf = numCrates/2;
     int secondHalf = numCrates - firstHalf;
 
-    // Debugging
-    //std::cout << "Calling numTrucks(" << firstHalf << ","<< loadSize << ")";
-    //std::cout << "and numTrucks(" << secondHalf << "," <<loadSize << ")" << std::endl;
+    if (mem.find(loadSize) != mem.end())
+    {
+        if (mem[loadSize].find(numCrates) == mem[loadSize].end())
+        {
+            mem[loadSize][numCrates] = numTrucks(firstHalf, loadSize), numTrucks(secondHalf, loadSize);
+        }
+    }
 
-    // Call Recursively
-    int Branch1 = subTrucks(firstHalf, loadSize);
-    int Branch2 = subTrucks(secondHalf, loadSize);
-    return Branch1 + Branch2;
+    else
+    {
+        std::map<int, int> l;
+        mem[loadSize] = l;
+        mem[loadSize][numCrates] = numTrucks(firstHalf, loadSize), numTrucks(secondHalf, loadSize);
+    }
+    return mem[loadSize][numCrates];
 }
