@@ -5,7 +5,8 @@ class EfficientTruckloads
 {
     private:
     int subTrucks(int numCrates, int loadSize);
-    
+    int memoisation(int numCrates, int loadSize);
+
     public:
     int numTrucks(int numCrates, int loadSize);
 };
