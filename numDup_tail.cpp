@@ -1,4 +1,4 @@
-#include <iostream> // for debugging
+//#include <iostream> // for debugging
 
 /*
 Implemented using a helper function
@@ -27,10 +27,11 @@ int numDup(int arr[], int start, int size, int element)
     return numDupTail(arr,start,size,element,0);
 }
 
-
+/*
 int main()
 {
-    int arr[] = {-83,4,1,5,-83,6};
-    std::cout << numDup(arr,7,6,0) << std::endl;
+    int arr[] = {-83,4,0,5,-83,6};
+    std::cout << numDup(arr,1,6,0) << std::endl;
 }
 
+*/
