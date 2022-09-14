@@ -1,4 +1,4 @@
-//#include <iostream> // for debugging
+#include <iostream> // for debugging
 
 /*
 Implemented using a helper function
@@ -7,7 +7,7 @@ Implemented using a helper function
 int numDupTail(int arr[], int start, int size, int element, int counter)
 {
     // Base Case
-    if (size == start)
+    if (size >= start)
     {
         return counter;
     }
@@ -27,12 +27,10 @@ int numDup(int arr[], int start, int size, int element)
     return numDupTail(arr,start,size,element,0);
 }
 
-/*
 
 int main()
 {
-    int arr[] = {1,4,0,7,8,0,1,9,0};
-    std::cout << numDup(arr,1,9,0) << std::endl;
+    int arr[] = {-83,4,1,5,-83,6};
+    std::cout << numDup(arr,1,6,0) << std::endl;
 }
 
-*/
