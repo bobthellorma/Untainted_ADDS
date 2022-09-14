@@ -4,7 +4,7 @@ int numDup(int arr[], int start, int size, int element) {
     int dup = 0;
 
     // Base Case
-    if (size >= start)
+    if (size <= start)
     {
         return dup;
     }
