@@ -1,7 +1,7 @@
 #include "MapGeneric.h"
 #include <vector>
 
-vector<int> MapGeneric::mapspec(vector<int> vec, int acc)
+std::vector<int> MapGeneric::mapspec(vector<int> vec, int acc)
 {
     // Base Case
     if (acc >= vec.size())
@@ -16,7 +16,7 @@ vector<int> MapGeneric::mapspec(vector<int> vec, int acc)
     return mapspec(vec, acc+1);
 }
 
-vector<int> MapGeneric::map(vector<int> vec)​
+std::vector<int> MapGeneric::map(vector<int> vec)​
 {
     return mapspec(vec,0);
 }
