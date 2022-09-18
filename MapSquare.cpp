@@ -1,6 +1,6 @@
 #include "MapSquare.h"
 
-int MapAbsoluteValue::f(int val)
+int MapSquare::f(int val)
 {
     return val*val;
 }

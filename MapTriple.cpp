@@ -1,6 +1,6 @@
 #include "MapTriple.h"
 
-int MapAbsoluteValue::f(int val)
+int MapTriple::f(int val)
 {
     return 3*val;
 }
