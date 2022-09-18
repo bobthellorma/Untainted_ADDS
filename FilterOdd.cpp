@@ -2,7 +2,7 @@
 
 bool FilterOdd::g(int val)
 {
-    if(val%2 == 0)
+    if(val%2 == 1)
     {
         return true;
     }
