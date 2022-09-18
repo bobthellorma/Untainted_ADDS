@@ -7,19 +7,17 @@
 #include "FilterNonPositive.h"
 #include "FilterOdd.h"
 #include "FilterForTwoDigitPositive.h"
+#include "ReduceGeneric.h"
+#include "ReduceGCD.h"
+#include "ReduceMinimum.h"
 #include <vector>
 
 int main()
 {
-    std::vector<int> vals = {0,4,-3,11,8,19};
-    FilterForTwoDigitPositive a;
-    FilterNonPositive b;
-    FilterOdd c;
-
-    std::vector<int> out = c.filter(vals);
-
-    for (int i = 0; i < out.size(); i++)
-    {
-        std::cout << out.at(i) << std::endl;
-    }
+    std::vector<int> vals = {2,4,6,8};
+    
+    ReduceGCD a;
+    ReduceMinimum b;
+    std::cout << a.reduce(vals) << std::endl;
+    std::cout << b.reduce(vals) << std::endl;
 }
