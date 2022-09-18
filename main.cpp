@@ -14,10 +14,21 @@
 
 int main()
 {
-    std::vector<int> vals = {2,4,6,8};
+    std::vector<int> trial = {6,-11,53,-16,73,128,105,104,-71,-179,102,12,21,-145,-99,199,-156,-186,43,-189};
+
+    MapTriple triple;
+    std::vector<int> out = triple.map(trial);
+    MapAbsoluteValue absa;
+    out = absa.map(out);
+
+    FilterForTwoDigitPositive f1;
+    FilterOdd f2;
+    out = f2.filter(out);
+    out = f1.filter(out);
+
+    for (int i = 0; i < out.size(); i++)
+    {
+        std::cout << out.at(i) << std::endl;
+    }
     
-    ReduceGCD a;
-    ReduceMinimum b;
-    std::cout << a.reduce(vals) << std::endl;
-    std::cout << b.reduce(vals) << std::endl;
 }
