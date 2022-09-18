@@ -3,15 +3,20 @@
 #include "MapAbsoluteValue.h"
 #include "MapSquare.h"
 #include "MapTriple.h"
+#include "FilterGeneric.h"
+#include "FilterNonPositive.h"
+#include "FilterOdd.h"
+#include "FilterForTwoDigitPositive.h"
 #include <vector>
 
 int main()
 {
-    std::vector<int> vals = {1,3,5,7,9,-1};
-    MapSquare squaremap;
-    MapAbsoluteValue absmap;
-    MapTriple trimap;
-    std::vector<int> out = trimap.map(vals);
+    std::vector<int> vals = {0,4,-3,11,8,19};
+    FilterForTwoDigitPositive a;
+    FilterNonPositive b;
+    FilterOdd c;
+
+    std::vector<int> out = c.filter(vals);
 
     for (int i = 0; i < out.size(); i++)
     {
