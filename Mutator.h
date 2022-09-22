@@ -1,0 +1,11 @@
+#ifndef _MUTATOR_H
+#define _MUTATOR_H
+#include "Individual.h"
+
+class Mutator
+{
+    public:
+    Individual mutate(Individual ind, int k) = 0;
+};
+
+#endif
