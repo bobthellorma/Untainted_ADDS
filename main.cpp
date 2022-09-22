@@ -14,7 +14,7 @@
 
 int main()
 {
-    std::vector<int> trial = {6,-11,53,-16,73,128,105,104,-71,-179,102,12,21,-145,-99,199,-156,-186,43,-189};
+    std::vector<int> trial = {-5,-24,-123,-81,200,157,84,67,-83,-60,-72,192,-25,-20,-50,-181,-70,-15,-108,-123};
 
     MapTriple triple;
     std::vector<int> out = triple.map(trial);
@@ -26,9 +26,9 @@ int main()
     out = f2.filter(out);
     out = f1.filter(out);
 
-    for (int i = 0; i < out.size(); i++)
-    {
-        std::cout << out.at(i) << std::endl;
-    }
+    ReduceGCD red1;
+    ReduceMinimum red2;
+
+    std::cout << red1.reduce(out) << std::endl;
     
 }
