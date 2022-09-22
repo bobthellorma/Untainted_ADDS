@@ -3,13 +3,19 @@
 
 Individual BitFlipProb::mutate(Individual ind, double p)
 {
-    for (int i = 0; i < ind.getLength(); i++)
+    // Setup
+    int len = ind.getLength(); // obtain length
+    std::string str = ind.getString(); // obtain DNA string
+    Individual returntype(str);
+
+    // Find value to change
+    for (int i = 0; i < len; i++)
     {
         double randval = rand() % 100;
         if(10*p >= randval)
         {
-            ind.flipBit(ind.binaryString.at(i));
+            returntype.flipBit(i);
         }
     }
-    return ind;
+    return returntype;
 }
