@@ -6,6 +6,13 @@
 #include "BitFlip.h"
 #include "BitFlipProb.h"
 
+Individual* execute(Individual* indPtr, Mutator* mPtr, int k)
+{
+    mPtr->mutate(*indPtr, k);
+    return indPtr;
+
+}
+
 int main()
 {
     int k1 = 2; 
@@ -17,10 +24,10 @@ int main()
     BitFlip m1;
     Rearrange m2;
 
-    m1.mutate(a1,k1);
-    m1.mutate(a2,k1);
-    m2.mutate(a1,k2);
-    m2.mutate(a2,k2);
+    execute(&a1,&m1,k1);
+    execute(&a2,&m1,k1);
+    execute(&a1,&m2,k2);
+    execute(&a2,&m2,k2);
     std::cout << a1.getString() << std::endl;
     std::cout << a1.getMaxOnes() << std::endl;
     std::cout << a2.getString() << std::endl;
