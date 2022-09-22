@@ -14,7 +14,11 @@ int Individual::getBit(int pos)
     {
         return -1;
     }
-    return std::stoi(binaryString,nullptr,pos);
+    if (binaryString.at(pos) == '1')
+    {
+        return 1;
+    }
+    return 0;
 }
 
 void Individual::flipBit(int pos)
@@ -24,13 +28,13 @@ void Individual::flipBit(int pos)
     {
         return;
     }
-    if(binaryString[pos] == 0)
+    if(binaryString[pos] == '0')
     {
-        binaryString[pos] = 1;
+        binaryString[pos] = '1';
     }
     else
     {
-        binaryString[pos] = 0;
+        binaryString[pos] = '0';
     }
     return;
 }
@@ -64,9 +68,7 @@ int Individual::getLength()
 
 Individual::Individual(int len)
 {
-    binaryString = {0};
-
-    for (int i = 0; i < len-1; i++)
+    for (int i = 0; i < len; i++)
     {
         binaryString.append(0);
     }

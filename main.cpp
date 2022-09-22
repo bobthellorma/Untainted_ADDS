@@ -16,6 +16,7 @@ int main()
     Individual a2 = Individual(two);
     BitFlip m1;
     Rearrange m2;
+
     m1.mutate(a1,k1);
     m1.mutate(a2,k1);
     m2.mutate(a1,k2);
