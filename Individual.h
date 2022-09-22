@@ -2,13 +2,14 @@
 #define _INDIVIDUAL_H
 #include <string>
 
+
 class Individual
 {
     private:
     std::string binaryString;
 
     public:
-    std::string get_string();
+    std::string getString();
     int getBit(int pos);
     void flipBit(int pos);
     int getMaxOnes();

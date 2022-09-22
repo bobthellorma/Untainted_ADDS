@@ -1,4 +1,6 @@
+#include "Mutator.h"
 #include "Rearrange.h"
+#include "Individual.h"
 #include <string>
 #include <iostream>
 

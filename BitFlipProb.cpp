@@ -1,4 +1,5 @@
 #include "BitFlipProb.h"
+#include "Individual.h"
 
 Individual BitFlipProb::mutate(Individual ind, double p)
 {

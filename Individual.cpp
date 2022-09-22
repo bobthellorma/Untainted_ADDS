@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-std::string Individual::get_string()
+std::string Individual::getString()
 {
     return binaryString;
 }
