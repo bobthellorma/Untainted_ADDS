@@ -20,9 +20,9 @@ int main()
     m1.mutate(a2,k1);
     m2.mutate(a1,k2);
     m2.mutate(a2,k2);
-    std::cout << a1.get_string() << std::endl;
+    std::cout << a1.getString() << std::endl;
     std::cout << a1.getMaxOnes() << std::endl;
-    std::cout << a2.get_string() << std::endl;
+    std::cout << a2.getString() << std::endl;
     std::cout << a2.getMaxOnes() << std::endl;
 
 
