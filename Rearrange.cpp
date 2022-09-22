@@ -4,8 +4,9 @@
 #include <string>
 #include <iostream>
 
-Individual Rearrange::mutate(Individual ind, int k)
+Individual* Rearrange::mutate(Individual* ind, int k)
 {
+    /*
     int len = ind.getLength();
     int second = k%len;
     int first = len - second;
@@ -30,5 +31,6 @@ Individual Rearrange::mutate(Individual ind, int k)
         ind.binaryString.at(i) = output.at(i);
     }
     std::cout << "Output: " << output << std::endl;
+    */
     return ind;
 }
