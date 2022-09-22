@@ -1,4 +1,6 @@
 #include "Individual.h"
+#include <iostream>
+#include <string>
 
 std::string Individual::get_string()
 {
@@ -12,7 +14,7 @@ int Individual::getBit(int pos)
     {
         return -1;
     }
-    return binaryString[pos];
+    return std::stoi(binaryString,nullptr,pos);
 }
 
 void Individual::flipBit(int pos)
@@ -39,7 +41,7 @@ int Individual::getMaxOnes()
     int count = 0;
     for(int i = 0; i < binaryString.size(); i++)
     {
-        if (binaryString.at(i) == 1)
+        if (binaryString.at(i) == '1')
         {
             count++;
         }
