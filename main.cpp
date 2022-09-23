@@ -15,10 +15,10 @@ Individual* execute(Individual* indPtr, Mutator* mPtr, int k)
 
 int main()
 {
-    int k1 = 2; 
-    int k2 = 2;
-    std::string one = "000000";
-    std::string two = "0111";
+    int k1 = 7; 
+    int k2 = 3;
+    std::string one = "001100";
+    std::string two = "011100";
     Individual a1 = Individual(one);
     Individual a2 = Individual(two);
     BitFlip m1;
