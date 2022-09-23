@@ -7,13 +7,12 @@
 Individual Rearrange::mutate(Individual ind, int k)
 {
     int len = ind.getLength();
-    int second = k%len;
+    int second = k%len+1;
     int first = len - second;
     std::string output;
 
     for (int i = first; i < len; i++)
     {
-        //std::cout << ind.getBit(i);
         output.append(std::to_string(ind.getBit(i)));
     }
 

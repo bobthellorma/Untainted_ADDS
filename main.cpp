@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <string>
 #include "Individual.h"
 #include "Mutator.h"
@@ -24,14 +25,15 @@ int main()
     Rearrange m2;
 
     execute(&a1,&m1,k1); // we have successfully flipped 2nd 
-    execute(&a2,&m1,k1);
-    std::cout << a1.getString() << std::endl;
-    std::cout << a2.getString() << std::endl;
-    execute(&a1,&m2,k2);
     execute(&a2,&m2,k2);
+
+    // Print out
     std::cout << a1.getString() << std::endl;
-    std::cout << a1.getMaxOnes() << std::endl;
     std::cout << a2.getString() << std::endl;
-    std::cout << a2.getMaxOnes() << std::endl;
+
+    // Obtain maximums
+    int first = a1.getMaxOnes();
+    int second = a2.getMaxOnes();
+    std::cout << std::max(first,second) << std::endl;
     
 }
