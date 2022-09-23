@@ -9,7 +9,7 @@ class BitFlipProb : public Mutator
     double pin;
 
     public:
-    Individual mutate(Individual ind);
+    Individual mutate(Individual ind, int k);
     BitFlipProb(double p);
 };
 

@@ -4,10 +4,14 @@
 
 BitFlipProb::BitFlipProb(double p)
 {
+    if (p <= 1 and p >= 0)
+    {
     pin = p;
+    }
+    else{pin = 0;}
 }
 
-Individual BitFlipProb::mutate(Individual ind)
+Individual BitFlipProb::mutate(Individual ind, int k)
 {
     for (int i = 0; i < ind.getLength(); i++)
     {
