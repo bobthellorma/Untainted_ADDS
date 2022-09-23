@@ -15,10 +15,10 @@ Individual* execute(Individual* indPtr, Mutator* mPtr, int k)
 
 int main()
 { 
-    std::string one = "111111";
-    int k1 = 6;
-    std::string two = "010101";
-    int k2 = 3;
+    std::string one = "01111";
+    int k1 = 3;
+    std::string two = "110000";
+    int k2 = 4;
 
     Individual a1 = Individual(one);
     Individual a2 = Individual(two);
@@ -33,8 +33,6 @@ int main()
     std::cout << a2.getString() << std::endl;
 
     // Obtain maximums
-    int first = a1.getMaxOnes();
-    int second = a2.getMaxOnes();
-    std::cout << std::max(first,second) << std::endl;
+    std::cout << a2.getMaxOnes() << std::endl;
     
 }
