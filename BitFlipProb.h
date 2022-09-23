@@ -6,11 +6,11 @@
 class BitFlipProb : public Mutator
 {
     private:
-    double p;
+    double pin;
 
     public:
     Individual mutate(Individual ind);
-    BitFlipProb(double pin);
+    BitFlipProb(double p);
 };
 
 #endif
