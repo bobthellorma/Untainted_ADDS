@@ -1,6 +1,6 @@
+#include "Individual.h"
 #include "Mutator.h"
 #include "Rearrange.h"
-#include "Individual.h"
 #include <string>
 #include <iostream>
 
@@ -23,7 +23,7 @@ Individual Rearrange::mutate(Individual ind, int k)
     }
     
     ind.setString(output);
-    
+
     std::cout << "Output: " << output << std::endl;
     return ind;
 }
