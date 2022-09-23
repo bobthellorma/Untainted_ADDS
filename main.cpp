@@ -15,10 +15,10 @@ Individual* execute(Individual* indPtr, Mutator* mPtr, int k)
 
 int main()
 { 
-    std::string one = "001100";
-    int k1 = 1;
-    std::string two = "101111";
-    int k2 = 2;
+    std::string one;
+    int k1;
+    std::string two;
+    int k2;
 
     Individual a1 = Individual(one);
     Individual a2 = Individual(two);
