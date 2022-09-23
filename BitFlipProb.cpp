@@ -8,7 +8,7 @@ Individual BitFlipProb::mutate(Individual ind, double p)
         double randval = rand() % 100;
         if(10*p >= randval)
         {
-            ind.flipBit(ind.binaryString.at(i));
+            ind.flipBit(i);
         }
     }
     return ind;

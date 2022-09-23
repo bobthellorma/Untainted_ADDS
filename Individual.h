@@ -10,16 +10,13 @@ class Individual
 
     public:
     std::string getString();
+    void setString(std::string in);
     int getBit(int pos);
     void flipBit(int pos);
     int getMaxOnes();
     int getLength();
     Individual(int len);
     Individual(std::string dna);
-
-    friend class BitFlip;
-    friend class BitFlipProb;
-    friend class Rearrange;
 };
 
 #endif

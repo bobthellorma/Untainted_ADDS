@@ -43,7 +43,8 @@ int Individual::getMaxOnes()
 {
     int best = 0;
     int count = 0;
-    for(int i = 0; i < binaryString.size(); i++)
+    int size = binaryString.size();
+    for(int i = 0; i < size; i++)
     {
         if (binaryString.at(i) == '1')
         {
@@ -77,4 +78,10 @@ Individual::Individual(int len)
 Individual::Individual(std::string dna)
 {
     binaryString = dna;
+}
+
+void Individual::setString(std::string in)
+{
+    binaryString = in;
+    return;
 }
