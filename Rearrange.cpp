@@ -13,7 +13,7 @@ Individual Rearrange::mutate(Individual ind, int k)
 
     for (int i = first; i < len; i++)
     {
-        std::cout << ind.getBit(i);
+        //std::cout << ind.getBit(i);
         output.append(std::to_string(ind.getBit(i)));
     }
 
@@ -24,6 +24,6 @@ Individual Rearrange::mutate(Individual ind, int k)
     
     ind.setString(output);
 
-    std::cout << "Output: " << output << std::endl;
+    //std::cout << "Output: " << output << std::endl;
     return ind;
 }

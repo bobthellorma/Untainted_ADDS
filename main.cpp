@@ -25,17 +25,11 @@ int main()
 
     Individual* a = execute(&a1,&m1,k1);
     Individual* b = execute(&a2,&m1,k1);
-    std::cout << a->getString() << std::endl;
-    std::cout << b->getString() << std::endl;
-
-    /*
-    execute(&a1,&m2,k2);
-    execute(&a2,&m2,k2);
+    execute(a,&m2,k2);
+    execute(b,&m2,k2);
     std::cout << a1.getString() << std::endl;
     std::cout << a1.getMaxOnes() << std::endl;
     std::cout << a2.getString() << std::endl;
     std::cout << a2.getMaxOnes() << std::endl;
-    */
-
     
 }
