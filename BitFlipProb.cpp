@@ -2,7 +2,12 @@
 #include "Mutator.h"
 #include "BitFlipProb.h"
 
-Individual BitFlipProb::mutate(Individual ind, double p)
+BitFlipProb::BitFlipProb(double pin)
+{
+    p = pin;
+}
+
+Individual BitFlipProb::mutate(Individual ind)
 {
     for (int i = 0; i < ind.getLength(); i++)
     {

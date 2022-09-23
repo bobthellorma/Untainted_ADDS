@@ -8,7 +8,7 @@
 
 Individual* execute(Individual* indPtr, Mutator* mPtr, int k)
 {
-    mPtr->mutate(*indPtr, k);
+    *indPtr = mPtr->mutate(*indPtr, k);
     return indPtr;
 }
 
@@ -23,10 +23,12 @@ int main()
     BitFlip m1;
     Rearrange m2;
 
-    Individual* a = execute(&a1,&m1,k1);
-    Individual* b = execute(&a2,&m1,k1);
-    execute(a,&m2,k2);
-    execute(b,&m2,k2);
+    execute(&a1,&m1,k1); // we have successfully flipped 2nd 
+    execute(&a2,&m1,k1);
+    std::cout << a1.getString() << std::endl;
+    std::cout << a2.getString() << std::endl;
+    execute(&a1,&m2,k2);
+    execute(&a2,&m2,k2);
     std::cout << a1.getString() << std::endl;
     std::cout << a1.getMaxOnes() << std::endl;
     std::cout << a2.getString() << std::endl;
