@@ -16,16 +16,20 @@ Individual* execute(Individual* indPtr, Mutator* mPtr, int k)
 int main()
 { 
     std::string one;
+    std::cin >> one;
     int k1;
+    std::cin >> k1;
     std::string two;
+    std::cin >> two;
     int k2;
+    std::cin >> k2;
 
     Individual a1 = Individual(one);
     Individual a2 = Individual(two);
     BitFlip m1;
     Rearrange m2;
 
-    execute(&a1,&m1,k1); // we have successfully flipped 2nd 
+    execute(&a1,&m1,k1);
     execute(&a2,&m2,k2);
 
     // Print out
