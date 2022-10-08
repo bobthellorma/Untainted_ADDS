@@ -1,42 +1,40 @@
+#include "Sort.h"
+#include "BubbleSort.h"
+#include "QuickSort.h"
+#include "RecursiveBinarySearch.h"
+#include <vector>
 #include <iostream>
-#include <algorithm>
-#include <string>
-#include "Individual.h"
-#include "Mutator.h"
-#include "Rearrange.h"
-#include "BitFlip.h"
-#include "BitFlipProb.h"
-
-Individual* execute(Individual* indPtr, Mutator* mPtr, int k)
-{
-    *indPtr = mPtr->mutate(*indPtr, k);
-    return indPtr;
-}
 
 int main()
-{ 
-    std::string one;
-    std::cin >> one;
-    int k1;
-    std::cin >> k1;
-    std::string two;
-    std::cin >> two;
-    int k2;
-    std::cin >> k2;
+{
+    BubbleSort a;
+    QuickSort b;
+    RecursiveBinarySearch c;
 
-    Individual a1 = Individual(one);
-    Individual a2 = Individual(two);
-    BitFlip m1;
-    Rearrange m2;
+    // take in list
+    std::vector<int> listval;
+    std::cin >> listval;
 
-    execute(&a1,&m1,k1);
-    execute(&a2,&m2,k2);
+    // QuickSort list
+    std::vector<int> sorted = b.sort(listval);
 
-    // Print out
-    std::cout << a1.getString() << " ";
-    std::cout << a2.getString() << " ";
+    // BinarySearch "1"
+    bool exist = c.search(sorted,1);
+    if (exist == 0)
+    {
+        std::cout << "false";
+    }
+    else
+    {
+        std::cout << "true";
+    }
 
-    // Obtain maximums
-    std::cout << a2.getMaxOnes() << " ";
-    
+    // std::cout << exist;
+
+    for (int i = 0; i < sorted.size(); i++)
+    {
+    std::cout << " " << sorted.at(i);
+    }
+
+
 }
