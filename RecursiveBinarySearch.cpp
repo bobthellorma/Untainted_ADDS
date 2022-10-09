@@ -11,7 +11,7 @@ int RecursiveBinarySearch::searchesp(std::vector<int> list, int val, int start, 
     }
 
     // Compare middle case
-    int middle = (start + end)/2;
+    int middle = (start + end)/2 +1;
     int listval = list.at(middle);
     
     // Call Recursive
@@ -21,7 +21,7 @@ int RecursiveBinarySearch::searchesp(std::vector<int> list, int val, int start, 
     }
     else if(listval > val)
     {
-        return searchesp(list,val,start,middle);
+        return searchesp(list,val,start,middle-1);
     }
     else{
         return searchesp(list,val,middle,end);

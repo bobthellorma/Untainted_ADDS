@@ -4,7 +4,8 @@
 std::vector<int> QuickSort::sort(std::vector<int> list)
 {
     // Base Case
-    if(list.size() <= 1)
+    int size = list.size();
+    if(size <= 1)
     {
         return list;
     }
@@ -24,7 +25,7 @@ std::vector<int> QuickSort::sort(std::vector<int> list)
     std::vector<int> greater;
     std::vector<int> lesser;
     std::vector<int> pivots;
-    for (int i = 0; i < list.size(); i++)
+    for (int i = 0; i < size; i++)
     {
         if (list.at(i) < pivot)
         {
