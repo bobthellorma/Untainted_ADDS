@@ -20,12 +20,13 @@ int main()
     }
     
 
-    //std::vector<int> listval = {0,3,5,4,-5,100,7777,2014};
+    //std::vector<int> listval = {-36,-24,-8,-6,-4,-2,0,0,1,1,1,6,7,6,7,8};
 
     // QuickSort list
     std::vector<int> sorted = b.sort(listval);
 
     // BinarySearch "1"
+
     bool exist = c.search(sorted,1);
     if (exist == 0)
     {
@@ -35,7 +36,6 @@ int main()
     {
         std::cout << "true";
     }
-    
 
     // std::cout << exist;
     int size1 = sorted.size();
