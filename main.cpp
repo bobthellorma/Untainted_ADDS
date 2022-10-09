@@ -13,7 +13,12 @@ int main()
 
     // take in list
     std::vector<int> listval;
-    std::cin >> listval;
+    int tempa;
+    while (std::cin >> tempa)
+    {
+        listval.push_back(tempa);
+    }
+    
 
     // QuickSort list
     std::vector<int> sorted = b.sort(listval);
@@ -35,6 +40,4 @@ int main()
     {
     std::cout << " " << sorted.at(i);
     }
-
-
 }

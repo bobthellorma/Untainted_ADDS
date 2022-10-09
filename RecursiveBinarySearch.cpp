@@ -21,10 +21,10 @@ int RecursiveBinarySearch::searchesp(std::vector<int> list, int val, int start, 
     }
     else if(listval > val)
     {
-        return searchesp(list,val,start,middle-1);
+        return searchesp(list,val,start,middle);
     }
     else{
-        return searchesp(list,val,middle+1,end);
+        return searchesp(list,val,middle,end);
     }
 }
 
