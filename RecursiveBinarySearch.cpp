@@ -28,17 +28,18 @@ int RecursiveBinarySearch::searchesp(std::vector<int> list, int val, int start, 
         return searchesp(list,val,start,middle-1,true);
     }
     else{
-        return searchesp(list,val,middle+1,end,false);
+        return searchesp(list,val,middle,end,false);
     }
 }
 
 bool RecursiveBinarySearch::search(std::vector<int> list, int val)
 {
-    if (list.size() == 0)
+    int size = list.size();
+    if (size <= 0)
     {
-        return false;
+        return false; // automatically return false if empty
     }
-    
+
     int ans = searchesp(list,val,0,list.size()-1,false);
     if (ans == -1)
     {

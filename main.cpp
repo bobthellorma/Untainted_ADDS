@@ -12,14 +12,15 @@ int main()
     RecursiveBinarySearch c;
 
     // take in list
+    /*
     std::vector<int> listval;
     int tempa;
     while (std::cin >> tempa)
     {
         listval.push_back(tempa);
     }
-    
-    //std::vector<int> listval = {};
+    */
+    std::vector<int> listval = {0,3,5,4,-5,100,7777,2014};
 
     // QuickSort list
     std::vector<int> sorted = b.sort(listval);
@@ -35,6 +36,7 @@ int main()
     {
         std::cout << "true";
     }
+    
 
     // std::cout << exist;
     int size1 = sorted.size();
