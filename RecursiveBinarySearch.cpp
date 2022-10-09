@@ -34,6 +34,11 @@ int RecursiveBinarySearch::searchesp(std::vector<int> list, int val, int start, 
 
 bool RecursiveBinarySearch::search(std::vector<int> list, int val)
 {
+    if (list.size() == 0)
+    {
+        return false;
+    }
+    
     int ans = searchesp(list,val,0,list.size()-1,false);
     if (ans == -1)
     {

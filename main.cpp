@@ -19,8 +19,7 @@ int main()
         listval.push_back(tempa);
     }
     
-
-    //std::vector<int> listval = {-36,-24,-8,-6,-4,-2,0,0,1,1,1,6,7,6,7,8};
+    //std::vector<int> listval = {};
 
     // QuickSort list
     std::vector<int> sorted = b.sort(listval);
