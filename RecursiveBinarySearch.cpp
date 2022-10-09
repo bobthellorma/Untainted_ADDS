@@ -40,6 +40,15 @@ bool RecursiveBinarySearch::search(std::vector<int> list, int val)
         return false; // return false if list is empty
     }
 
+    if (list.size() == 1)
+    {
+        if(list.at(0) == val)
+        {
+            return true;
+        }
+        return false;
+    }
+
     int ans = searchesp(list,val,0,list.size()-1);
     if (ans == -1)
     {

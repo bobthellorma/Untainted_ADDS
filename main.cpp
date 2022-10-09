@@ -12,7 +12,7 @@ int main()
     RecursiveBinarySearch c;
 
     // take in list
-    //std::vector<int> listval = {};
+    //std::vector<int> listval = {1};
     std::vector<int> listval;
     int tempa;
     while (std::cin >> tempa)
