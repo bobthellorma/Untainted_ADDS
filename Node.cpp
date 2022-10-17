@@ -1,4 +1,5 @@
 #include "Node.h"
+#include <cstddef>
 
 int Node::get_data()
 {
@@ -15,7 +16,7 @@ void Node::set_data(int newval)
     data = newval;
 }
 
-void set_next(Node* newnode)
+void Node::set_next(Node* newnode)
 {
     next = newnode;
 }
@@ -23,5 +24,5 @@ void set_next(Node* newnode)
 Node::Node()
 {
     data = 0;
-    next = NULL;
+    next = nullptr;
 }

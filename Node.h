@@ -12,7 +12,7 @@ class Node
     Node* get_next();
     void set_data(int newval);
     void set_next(Node* newnode);
-    Node()
+    Node();
 };
 
 #endif

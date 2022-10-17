@@ -2,31 +2,31 @@
 #include "LinkedList.h"
 #include <iostream>
 #include <limits>
+#include <cstddef>
 
 void LinkedList::addFront(int newItem)
 {
-    Node newnode = Node::Node();
-    newnode.set_next = head;
-    newnode.set_data = newItem;
+    Node newnode = Node();
+    newnode.set_next(head);
+    newnode.set_data(newItem);
     head = &newnode;
 }
 
-void addEnd(int newItem)
+void LinkedList::addEnd(int newItem)
 {
-    Node newnode = Node::Node();
-    newnode.set_next = NULL;
-    newnode.set_data = newItem;
+    Node newnode = Node(); // create node
+    newnode.set_data(newItem); // make data the same
 
-    if(head == NULL)
+    if(head == nullptr)
     {
-        head = newnode;
+        head = &newnode;
     }
     else
     {
         Node* temp = head;
-        while(temp.get_next() != NULL)
+        while(temp->get_next() != nullptr)
         {
-            temp = temp->get_next;
+            temp = temp->get_next();
         }
         temp->set_next(&newnode);
     }
@@ -34,32 +34,32 @@ void addEnd(int newItem)
 
 void LinkedList::addAtPosition(int position, int newItem)
 {
-    Node newnode = Node::Node();
-    newnode.set_data = newItem;
+    Node newnode = Node();
+    newnode.set_data(newItem);
 
-    if(positon <= 1 || head == NULL)
+    if(position <= 1 || head == nullptr)
     {
-        head = newnode;
+        head = &newnode;
     }
     else
     {
         Node* temp = head;
         int counter = 0;
-        while(temp.get_next() != NULL && counter <= position)
+        while(temp->get_next() != nullptr && counter <= position)
         {
-            temp = temp->get_next;
+            temp = temp->get_next();
             counter++;
         }
         temp->set_next(&newnode);
     }
 }
 
-int search(int Item)
+int LinkedList::search(int Item)
 {
     int counter = 0;
     bool condition = 0;
     Node* temp = head;
-    while(temp.get_next() != NULL && condition == 0)
+    while(temp->get_next() != nullptr && condition == 0)
     {
         if (temp->get_data() == Item)
         {
@@ -73,32 +73,32 @@ int search(int Item)
     return 0;
 }
 
-void deleteFront()
+void LinkedList::deleteFront()
 {
     Node* temp = head;
-    Node* next = head.get_next();
+    Node* next = head->get_next();
     head = next;
-    free(temp)
+    free(temp);
     return;
 }
 
-void deleteEnd()
+void LinkedList::deleteEnd()
 {
     Node* temp = head;
-    while(temp.get_next() != NULL)
+    while(temp->get_next() != nullptr)
     {
         temp = temp->get_next();
-        if(temp->get_next() == NULL)
+        if(temp->get_next() == nullptr)
         {
             Node* tbdeleted = temp->get_next();
-            temp.get_next() == NULL;
+            temp->get_next() == nullptr;
             free(tbdeleted);
             return;
         }
     }
 }
 
-void deletePosition(int position)
+void LinkedList::deletePosition(int position)
 {
     if (position < 1)
     {
@@ -107,13 +107,13 @@ void deletePosition(int position)
 
     Node* temp = head;
     int counter = 0;
-    while(temp.get_next() != NULL)
+    while(temp->get_next() != nullptr)
     {
         if (counter == position-1)
         {
             Node* tbdeleted = temp->get_next();
             Node* second = tbdeleted->get_next();
-            temp->get_next() = second;
+            temp->set_next(second);
             free(tbdeleted);
             return; 
         }
@@ -123,11 +123,11 @@ void deletePosition(int position)
     std::cout << "outside range";
 }
 
-int getItem (int position)
+int LinkedList::getItem (int position)
 {
     Node* temp = head;
     int counter = 0;
-    while(temp.get_next() != NULL)
+    while(temp->get_next() != nullptr)
     {
         if (counter == position)
         {
@@ -141,49 +141,32 @@ int getItem (int position)
     return std::numeric_limits<int>::max();
 }
 
-void printItems()
+void LinkedList::printItems()
 {
     Node* temp = head;
-    while(temp.get_next() != NULL)
+    while(temp->get_next() != nullptr)
     {
         std::cout << temp->get_data() << " ";
+        temp = temp->get_next();
     }
+    return;
 }
 
 // Constructors
 LinkedList::LinkedList()
 {
-    head = NULL;
+    head = nullptr;
 }
 
-LinkedList(int array[], int size)
+LinkedList::LinkedList(int array[], int size)
 { 
-    if (size < 1)
+    head = nullptr;
+    for (int i = 0; i < size; i++)
     {
-        head = NULL;
-    }
-    else
-    {
-        // set up the head
-        int count = 1;
-        Node first;
-        head = &first;
-        first.set_data(array.at(0));
-        Node* temp = head;
-
-        // while loop to fill rest
-        while(count <= size)
-        {
-            Node newnode;
-            temp->get_next() = &newnode;
-            
-            temp->set_data(array.at(count));
-            count++;
-        }
+        addEnd(array[i]);
     }
 }
 
-~LinkedList()
+LinkedList::~LinkedList()
 {
-
 }
