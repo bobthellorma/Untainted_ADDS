@@ -10,7 +10,7 @@ int main()
     // Take in line of input
     std::string input;
     std::getline(std::cin, input);
-    std::cout << input.at(0);
+    //std::cout << input.at(0);
 
     // Find spaces
     int spaces[100];
