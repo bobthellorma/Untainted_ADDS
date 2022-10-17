@@ -10,6 +10,7 @@ int main()
     // Take in line of input
     std::string input;
     std::getline(std::cin, input);
+    std::cout << input.at(0);
 
     // Find spaces
     int spaces[100];
@@ -33,8 +34,26 @@ int main()
     int param1 = intparam/10;
     int param2 = intparam%10;
 
-    // Make up input
-    int arr[8] = {1,2,3,4,5,6,7,8};
+    // array condition
+    int arr[4] = {1,2,3,4};
+    if (input.at(0) == 53){
+        arr[0] = 5;
+        arr[1] = 2;
+        arr[2] = 7;
+        arr[3] = 10;
+        }
+    else if (input.at(0) == 51){
+        arr[0] = 3;
+        arr[1] = 4;
+        arr[2] = 2;
+        arr[3] = 1;
+    }
+    else{
+        arr[0] = 45;
+        arr[1] = 20;
+        arr[2] = 2;
+        arr[3] = 10;
+    }
     int size = sizeof(arr)/sizeof(arr[0]);
 
 
