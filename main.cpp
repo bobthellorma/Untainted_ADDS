@@ -45,7 +45,7 @@ int main()
     else if (input.at(0) == 51){
         arr[0] = 3;
         arr[1] = 4;
-        arr[2] = 2;
+        arr[2] = 1;
         arr[3] = 1;
     }
     else{
