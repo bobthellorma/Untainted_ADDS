@@ -2,27 +2,62 @@
 #include "Node.h"
 #include "LinkedList.h"
 #include <string>
+#include <vector>
+#include <sstream>
 
 int main()
 {
-    // Set Inputs
-    int arr[] = {5,2,7,10};
-    int size = sizeof(arr);
+    // Take in line of input
+    std::string input;
+    std::getline(std::cin, input);
 
-    // Set Command
-    std::string command = "AF";
+    // Find spaces
+    int spaces[100];
+    int numspaces;
+    for (int i = 0; i < input.size(); i++)
+    {
+        if (input.at(i) == 32)
+        {
+            spaces[numspaces] = input[i];
+            numspaces++;
+        }
+    }
 
-    // Set Parameters
-    int param1 = 3;
-    int param2 = 9;
+    
+
+    
+    char first = input[input.size()-3];
+    char second = input[input.size()-1];
+    std::string stringedparam = {first,second};
+    int intparam = std::stoi(stringedparam);
+    int param1 = intparam/10;
+    int param2 = intparam%10;
+
+    // Make up input
+    int arr[8] = {1,2,3,4,5,6,7,8};
+    int size = sizeof(arr)/sizeof(arr[0]);
+
+
+    // get std::string command
+    char sixthfromend = input.at(input.size()-6);
+    char fifth = input.at(input.size()-5);
+    std::string command;
+    int upto;
+    {
+        if (sixthfromend == 32) // if the character is only one
+        {
+            command = {fifth};
+        }
+        else // if two characters
+        {
+            command = {sixthfromend, fifth};
+        }
+    }
+    // std::cout << command << std::endl; // command is correct
+
 
     // Create Linked List with inputs
     LinkedList use = LinkedList(arr,size);
-
-    // Check creation was successful
-    use.printItems();
-
-    /*
 
     // Function Map
     if (command == "AF")
@@ -59,5 +94,5 @@ int main()
     }
 
     use.printItems();
-    */
+
 }

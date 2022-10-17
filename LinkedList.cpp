@@ -6,51 +6,60 @@
 
 void LinkedList::addFront(int newItem)
 {
-    Node newnode = Node();
-    newnode.set_next(head);
-    newnode.set_data(newItem);
-    head = &newnode;
+    Node* newnode = new Node(); // create new node
+    newnode->set_data(newItem); // give node data
+    newnode->set_next(head);
+    head = newnode;
 }
 
 void LinkedList::addEnd(int newItem)
 {
-    Node newnode = Node(); // create node
-    newnode.set_data(newItem); // make data the same
+    // create newNode
+    Node* newNode = new Node();
+    newNode->set_data(newItem);
+    newNode->set_next(nullptr);
 
+    // if head does point to anything
     if(head == nullptr)
     {
-        head = &newnode;
+        head = newNode;
     }
+
     else
     {
         Node* temp = head;
-        while(temp->get_next() != nullptr)
+        while (temp->get_next() != nullptr)
         {
             temp = temp->get_next();
         }
-        temp->set_next(&newnode);
+        temp->set_next(newNode);
     }
 }
 
 void LinkedList::addAtPosition(int position, int newItem)
 {
-    Node newnode = Node();
-    newnode.set_data(newItem);
+    Node* newnode = new Node(); // create new node
+    newnode->set_data(newItem); // give node data
 
     if(position <= 1 || head == nullptr)
     {
-        head = &newnode;
+        newnode->set_next(head);
+        head = newnode;
     }
     else
     {
         Node* temp = head;
         int counter = 0;
-        while(temp->get_next() != nullptr && counter <= position)
+        while(temp->get_next() != nullptr)
         {
             temp = temp->get_next();
             counter++;
+            if (counter == position-2)
+            {
+                newnode->set_next(temp->get_next());
+                temp->set_next(newnode);
+            }
         }
-        temp->set_next(&newnode);
     }
 }
 
@@ -84,18 +93,24 @@ void LinkedList::deleteFront()
 
 void LinkedList::deleteEnd()
 {
-    Node* temp = head;
-    while(temp->get_next() != nullptr)
+    if(head != nullptr)
     {
-        temp = temp->get_next();
-        if(temp->get_next() == nullptr)
+        if(head->get_next() == nullptr)
         {
-            Node* tbdeleted = temp->get_next();
-            temp->get_next() == nullptr;
-            free(tbdeleted);
-            return;
+            head = nullptr;
         }
-    }
+        else
+        {
+            Node* temp = head;
+            while(temp->get_next()->get_next() != nullptr)
+            {
+                temp = temp->get_next();
+            }
+            Node* lastNode = temp->get_next();
+            temp->set_next(nullptr);
+            free(lastNode);
+        }
+    }   
 }
 
 void LinkedList::deletePosition(int position)
@@ -126,8 +141,8 @@ void LinkedList::deletePosition(int position)
 int LinkedList::getItem (int position)
 {
     Node* temp = head;
-    int counter = 0;
-    while(temp->get_next() != nullptr)
+    int counter = 1;
+    while(temp != nullptr)
     {
         if (counter == position)
         {
@@ -136,6 +151,7 @@ int LinkedList::getItem (int position)
         }
         temp = temp->get_next();
         counter++;
+        //std::cout << counter << std::endl;
     }
     std::cout << std::numeric_limits<int>::max() << " ";
     return std::numeric_limits<int>::max();
@@ -144,10 +160,11 @@ int LinkedList::getItem (int position)
 void LinkedList::printItems()
 {
     Node* temp = head;
+    std::cout << head->get_data() << " ";
     while(temp->get_next() != nullptr)
     {
-        std::cout << temp->get_data() << " ";
         temp = temp->get_next();
+        std::cout << temp->get_data() << " "; 
     }
     return;
 }
@@ -164,6 +181,7 @@ LinkedList::LinkedList(int array[], int size)
     for (int i = 0; i < size; i++)
     {
         addEnd(array[i]);
+        //std::cout << array[i];
     }
 }
 
