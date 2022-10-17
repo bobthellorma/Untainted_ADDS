@@ -122,12 +122,12 @@ void LinkedList::deletePosition(int position)
 
     Node* temp = head;
     int counter = 0;
-    while(temp->get_next()->get_next() != nullptr)
+    while(temp->get_next() != nullptr)
     {
         if (counter == position-1)
         {
-            Node* tbdeleted = temp->get_next();
-            Node* second = tbdeleted->get_next();
+            Node* tbdeleted = temp;
+            Node* second = tbdeleted;
             temp->set_next(second);
             free(tbdeleted);
             return; 
