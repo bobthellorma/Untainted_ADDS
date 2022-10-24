@@ -47,8 +47,8 @@ void operate(std::vector<std::string> functionin)
         {
             if (swita == 1)
             {
-                std::cout << "Error";
-                return;
+                //std::cout << "Error";
+                //return;
             }
             operations.push(functionin.at(i));
         }
@@ -66,8 +66,8 @@ void operate(std::vector<std::string> functionin)
         // Obtain values for calculations - operation
         if(operations.empty())
         {
-            std::cout << "Error";
-            return;
+            //std::cout << "Error";
+            //return;
         }
         std::string operation = operations.top();
         operations.pop();
@@ -99,14 +99,14 @@ void operate(std::vector<std::string> functionin)
         std::string &first = numbers.front();
         first = std::to_string(result);
     }
-    if (!operations.empty())
-    {
-        std::cout << "Error";
-    }
-    else
-    {
+    //if (!operations.empty())
+    //{
+        //std::cout << "Error";
+    //}
+    //else
+    //{
         std::cout << result;
-    }
+    //}
     return;
 }
 
