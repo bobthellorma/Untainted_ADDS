@@ -87,8 +87,8 @@ void operate(std::vector<std::string> functionin)
         {
             if (swita == 1)
             {
-                std::cout << "Error #2";
-                return;
+                //std::cout << "Error #2";
+                //return;
             }
             operations.push(functionin.at(i));
         }
