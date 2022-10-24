@@ -87,7 +87,7 @@ void operate(std::vector<std::string> functionin)
         {
             if (swita == 1)
             {
-                std::cout << "Error";
+                std::cout << "Error #2";
                 return;
             }
             operations.push(functionin.at(i));
@@ -102,13 +102,13 @@ void operate(std::vector<std::string> functionin)
     // Check for error
     if (operations.size() != numbers.size()-1)
     {
-        std::cout << "Error";
+        std::cout << "Error #3";
         return;
     }
 
     // Opening brackets
     int num = numbers.size();
-    for (int i = 0; i < num-1; i++)
+    for (int i = 0; i < num-2; i++)
     {
         std::cout << "( ";
     }
@@ -132,7 +132,7 @@ void operate(std::vector<std::string> functionin)
         // Obtain values for calculations - operation
         if(operations.empty())
         {
-            std::cout << "Error";
+            std::cout << "Error #4";
             return;
         }
         std::string operation = operations.top();
@@ -167,7 +167,7 @@ void operate(std::vector<std::string> functionin)
     }
     if (!operations.empty())
     {
-        std::cout << "Error";
+        std::cout << "Error #1";
     }
     else
     {
